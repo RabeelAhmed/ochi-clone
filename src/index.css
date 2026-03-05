@@ -1,3 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  /* Fluid text utility using clamp */
+  .text-fluid-xl {
+    font-size: clamp(2.5rem, 7.5vw, 8rem);
+  }
+  .text-fluid-lg {
+    font-size: clamp(2rem, 5vw, 6rem);
+  }
+  .text-fluid-md {
+    font-size: clamp(1.5rem, 4vw, 4.5rem);
+  }
+  .text-fluid-sm {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  /* Marquee no-select */
+  .no-select {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #18181b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #52525b;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #71717a;
+  }
+}
